@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script type="text/javascript">
+			function validateSignUp() {
+				  var x=document.forms["signUp"]["username"].value;
+				  if (x==null || x=="")
+				  {
+				  alert("User name must be filled out");
+				  return false;
+				  }
+				  var y=document.forms["signUp"]["password"].value;
+				  if (y==null || y=="")
+				  {
+				  alert("Password Should be entered")
+				  return false;
+				  }
+				  var z=document.forms["signUp"]["reenteredpassword"].value;
+				  if (z != y)
+				  {
+				  alert("Wrong confirmation")
+				  return false;
+				  }
+				  if (/^([A-Za-z0-9_\-\.]){1,}\@([A-Za-z0-9_\-\.]){1,}\.([a-zA-Z]){2,4}/.test(Form.email.value))  
+				  {  
+					return (true)  
+				  }  
+				  else
+					{  
+					alert("You have entered an invalid email address!")  
+						return (false)
+					}
+			}
+		</script>
+	</head>
+	<body style="background-color:cyan">
+		<br/><br/><br/><br/>
+		<center>
+		<form name="signUp" action="register.php" METHOD=post onsubmit="return validateSignUp()">
+		<table>
+			<tr><td>Email:</td>
+			<td><input type="text" name="email"/></td></tr>
+			<tr><td>Username:</td>
+			<td><input type="text" name="username"/> </td></tr>
+			<tr><td>Password:</td>
+			<td><input type="password" name="password" /> </td></tr>
+			<tr><td>Repassword:</td>
+			<td><input type="password" name="reenteredpassword" /> </td></tr>
+			<tr><td><input type="submit" value="sign up"/></td></tr>
+		</table>
+		</form>
+		<a href='CHOOSE.html'> return </a>
+		</center>
+	</body>
+</html>
